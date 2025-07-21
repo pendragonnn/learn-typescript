@@ -19,4 +19,45 @@ describe('Interface', function() {
     console.info(seller)
 
   })
+
+    it('should support function interface', function() {
+    
+    interface AddFunction {
+      (value1: number, value2: number): number
+    }
+
+    const add: AddFunction = (value1: number, value2: number) : number => {
+      return value1 + value2
+    }
+
+    expect(add(3,3)).toBe(6)
+
+  })
+
+  it('should support indexable interface', function() {
+
+    interface StringArray {
+      [index: number]: string
+    }
+
+    const name: StringArray = ["wahyu", "fajar", "jonathan"]
+    console.info(name)
+
+  })
+
+  it('should support indexable interface for non number index', function() {
+
+    interface StringDictionary {
+      [key: string]: string
+    }
+
+    const dictionary: StringDictionary = {
+      "name": "Wahyu", 
+      "address": "Bangladesh"
+    }
+
+    expect(dictionary["name"]).toBe("wahyu")
+    expect(dictionary["address"]).toBe("Bangladesh")
+
+  })
 })
