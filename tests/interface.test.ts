@@ -80,4 +80,22 @@ describe('Interface', function() {
     }
 
   })
+
+  it('should support function in interface', function() {
+    interface Person {
+      name: string
+      sayHello(name: string): string
+    }
+
+    const person: Person = {
+      name: "Hadjar",
+      sayHello: function(name: string): string {
+        return `Hello ${name}`
+      }
+    }
+
+    console.info(person.sayHello("Fajar"))
+
+    person.sayHello("Wahyu")
+  })
 })
