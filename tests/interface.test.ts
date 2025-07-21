@@ -98,4 +98,25 @@ describe('Interface', function() {
 
     person.sayHello("Wahyu")
   })
+
+  it('should support intersection types', function() {
+
+    interface HasName {
+      name: string
+    }
+
+    interface HasId {
+      id: string
+    }
+
+    type Domain = HasId & HasName
+
+    const domain: Domain = {
+      id: "1", 
+      name: "Wahyu"
+    }
+
+    console.info(domain.name)
+
+  })
 })
