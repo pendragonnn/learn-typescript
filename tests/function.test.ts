@@ -66,4 +66,24 @@ describe('Function', function() {
     
   })
 
+  it('should support function as parameter', function() {
+
+    function sayHello(name: string, filter: (name: string) => string): string {
+      return `Hello ${filter(name)}`
+    }
+
+    function toUpper(name: string): string {
+      return name.toUpperCase()
+    }
+
+    expect(sayHello("Wahyu", toUpper)).toBe("Hello WAHYU")
+
+    expect(sayHello("Fajar", function(name: string): string {
+      return name.toUpperCase()
+    })).toBe("Hello FAJAR")
+
+    expect(sayHello("Haji", (name: string) => name.toUpperCase())).toBe("Hello HAJI")
+
+  })
+
 })
