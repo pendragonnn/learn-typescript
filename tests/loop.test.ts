@@ -28,4 +28,15 @@ describe('Loop', function() {
 
   })
 
+  it('should support do while loop', function() {
+
+    let counter: number = 0
+
+    do {
+      console.info(counter)
+      counter++
+    } while(counter < 10)
+
+  })
+
 })
