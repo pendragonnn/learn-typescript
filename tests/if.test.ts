@@ -12,4 +12,12 @@ describe('if statement', function() {
     }
     
   })
+
+  it('should support ternary operator', function() {
+
+    const value: number = 80
+    const say: string = value >= 75 ? "Congratulations" : "Try Again"
+    console.info(say)
+
+  })
 })
